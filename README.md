@@ -74,47 +74,76 @@ your-project/
 
 ### Required Components
 
-**README.md File**
-- Must be present at the root of your repository
-- Should include a clear project description and the problem it solves
-- List all features and functionalities
-- Include screenshots from your UI for different features
-- Document all technologies, frameworks, and external APIs used
-- Provide step-by-step installation instructions
-- Include usage guidelines and examples
-- List all team members with their roles and contributions
+### 1. README.md
 
-**Code Organization**
+Your README is the first document evaluators will review. It must include:
+
+- **Project Name and Description**: A clear, concise description of what your project does and the problem it solves
+- **Features**: List all features and functionalities with screenshots from your UI
+- **Technologies Used**: Document all technologies, frameworks, and external APIs used
+- **Installation**: Provide step-by-step installation instructions
+- **Usage**: Include usage guidelines and examples
+- **Architecture**: Brief overview of the system architecture (optional but recommended)
+- **Team Members**: List all team members with their roles and contributions
+
+#### Team Collaboration Requirements
+
+The evaluation heavily weighs **team collaboration** based on GitHub commit history:
+
+| Distribution | Assessment | Impact on Score |
+|--------------|------------|-----------------|
+| Even split (e.g., 33%/33%/34%) | Excellent | Full points |
+| Reasonable split (e.g., 45%/35%/20%) | Good | Most points |
+| Uneven split (e.g., 80%/15%/5%) | Concerning | Reduced points |
+| Single contributor (100%) | Poor | Significant penalty |
+
+**Best Practices for Commits:**
+
+1. Each team member should commit their own work - Don't have one person commit everything
+2. Use meaningful commit messages:
+   - Good: "Add user authentication with JWT tokens"
+   - Bad: "update" or "fix"
+3. Commit regularly - Small, frequent commits are better than one massive commit
+4. Use branches for features - Merge via pull requests when possible
+
+**Check Your Contribution Distribution:**
+
+Run this command in your repository:
+```bash
+git shortlog -sn --all
+```
+
+### 2. Code Organization
 - Use proper file extensions for all code files
 - Maintain a clear and logical folder structure
 - Separate concerns into appropriate directories (models, services, utils, api)
 - Include an entry point file (e.g., main.py, index.js)
 
-**Dependencies Management**
+### 3. Dependencies Management
 - Include a dependencies file (requirements.txt for Python, package.json for Node.js, etc.)
 - List all libraries and frameworks required to run the project
 - Specify version numbers where applicable
 
-**Code Quality**
+### 4. Code Quality
 - Add meaningful comments and docstrings to all functions and classes
 - Include file headers explaining the purpose of each module
 - Follow language-specific best practices and conventions
 - Ensure code runs without errors
 
-**Security**
+### 5. Security
 - Do not include sensitive data such as API keys, passwords, or tokens
 - Use environment variables for configuration
 - Include a .gitignore file to exclude sensitive or unnecessary files
 
-**Testing**
+### 6. Testing
 - Include test files in a dedicated tests directory
 - Document how to run tests
 
-**Additional Documentation**
+### 7. Additional Documentation
 - Provide architecture overview or diagrams (optional but recommended)
 - Include any additional documentation in a docs directory
 
-### Repository Access
+### 8. Repository Access
 - Repository must be public
 - Use the main branch for submission
 - Ensure all team members have appropriate access
