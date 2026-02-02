@@ -110,33 +110,42 @@ The following datasets support shift planning and workforce management:
 - The **dim_taxonomy_terms** table provides standardized lookups across the platform
 - The **dim_users** table contains multiple user types: internal staff, merchant staff, and end-consumers
 
-## Additional Tables
+## Additional Tables Available in Full Dataset
 
-The following tables are available in the dataset but may be used less frequently:
+The following tables are available in the complete dataset but may be used less frequently or for specialized analyses:
 
 ### Financial & Billing
+- **dim_accounts** - Account information and financial account structures
 - **dim_subscriptions** - What we bill merchants for monthly (SaaS). Contains title (Product Name), amount (Monthly fee), start_date/end_date (Billing period, Active if end_date is NULL)
 - **fct_invoices** - The actual bills sent to merchants. Contains total_amount (Invoice total), status ('paid', 'unpaid', 'cancelled'), due_date (When they were supposed to pay)
-- **fct_earnings** - For revenue streams (data might not be accurate, different platform used currently)
-- **fct_expenses** - For expenses (data might not be accurate, different platform used currently)
+- **fct_earnings** - Revenue stream tracking (Note: data might not be accurate, different platform used currently)
+- **fct_expenses** - Expense tracking (Note: data might not be accurate, different platform used currently)
+
+### Merchant & Location Management
+- **dim_chains** - Restaurant/retail chain information for multi-location merchants
+- **dim_contacts** - Contact information for merchants and stakeholders
+- **dim_table_sections** - Table groupings and floor plan sections within restaurants
 
 ### Hardware & Devices
-- **dim_devices** - Contains the hardware devices with our merchants
-- **dim_payment_terminals** - The physical card machines (serial_number, model)
-- **fct_hardware_requests** - Tickets where merchants asked for new hardware
+- **dim_devices** - Hardware devices deployed with merchants
+- **dim_payment_terminals** - Physical card machines with serial_number and model information
+- **dim_receipt_printers** - Receipt printer configurations and hardware
+- **fct_hardware_requests** - Service tickets where merchants requested new hardware
 
-### Integrations
-- **dim_wolt_integrations** - Integrations with Wolt
-- **dim_nets_integrations** - Integrations with Nets
-- **dim_vivawallet_integrations** - Integrations with VivaWallet
-- **dim_elavon_integrations** - Integrations with Elavon
-- **dim_mobilepay_integrations** - Integrations with MobilePay
-- **dim_verifone_integrations** - Integrations with Verifone
+### Payment Integrations
+- **dim_wolt_integrations** - Integration configurations with Wolt delivery platform
+- **dim_vivawallet_integrations** - Integration configurations with VivaWallet payment processor
+- **dim_elavon_integrations** - Integration configurations with Elavon payment processor
+- **dim_mobilepay_integrations** - Integration configurations with MobilePay mobile payment system
+- **dim_verifone_integrations** - Integration configurations with Verifone payment terminals
 
-### Other
-- **fct_interactions** - Interactions/Communication between our People and Our Merchants
-- **fct_stock_movements** - Logs of stock going up/down
-- **fct_vouchers** - Discounts issued/redeemed
-- **dim_tiers** - Loyalty levels (Bronze, Silver, Gold). Subscription tier levels defining service packages with cashback percentages, delivery charges, and minimum spend requirements
-- **fct_reviews** - Consumer feedback (rating 1-5)
-- **fct_ratings** - Consumer feedback (rating 1-5)
+### Customer & Support
+- **fct_interactions** - Communication records between staff and merchants (support tickets, calls, emails)
+- **fct_dead_tasks** - Archive of incomplete or abandoned tasks for tracking and analysis
+- **dim_tiers** - Customer loyalty/subscription tier levels defining service packages with cashback percentages, delivery charges, and minimum spend requirements
+
+## Data Availability Notes
+
+- Most tables are available in the complete Datasets folder
+- Use case-specific folders (Inventory Management, Menu Engineering, Shift Planning) contain subsets relevant to each challenge
+- Contact organizers if you need access to additional tables not included in your use case folder
