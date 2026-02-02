@@ -29,25 +29,52 @@ Remember: clients look for measurable impact, scalability, and competitive advan
 
 ---
 
-## Data Processing & Optimization
+## Dataset Download
 
-### Large File Handling
+Due to file size limitations, the datasets are provided via GitHub Releases.
 
-To ensure optimal performance and manageability of the dataset, we have processed large data files:
+### Quick Start
 
-**Menu Engineering - Payment Data Split**
-- **Original File**: `fct_payments.csv` (2.16 GB, ~76.7 million records)
-- **Processed Files**:
-  - `fct_payments_part1.csv` (1.03 GB, ~38.4 million records including header)
-  - `fct_payments_part2.csv` (1.13 GB, ~38.4 million records including header)
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/ynakhla/DIH-X-AUC-Hackathon.git
+   cd DIH-X-AUC-Hackathon
+   ```
 
-**Rationale**: The original payment transaction file exceeded GitHub's recommended file size limits and was too large for efficient processing. By splitting it into two manageable parts, we enable:
-- Faster data loading and processing
-- Better version control with Git LFS
-- Parallel processing capabilities for analytics
-- Reduced memory requirements for data analysis
+2. **Download Dataset from Release**
+   
+   **[Download Datasets Here →](https://github.com/ynakhla/DIH-X-AUC-Hackathon/releases/tag/v1.0-data)**
 
-**Git LFS Configuration**: All CSV files are tracked using Git Large File Storage (LFS) to maintain repository performance while preserving full dataset access.
+   Choose the data for your use case:
+   - **inventory-management.zip** (667 MB) - Use Case 1: Fresh Flow Markets
+   - **menu-engineering-part1.zip** (1.4 GB) - Use Case 2: Flavor Flow Craft
+   - **menu-engineering-part2.zip** (1.2 GB) - Use Case 2: Flavor Flow Craft
+   - **shift-planning.zip** (292 MB) - Use Case 3: Quick Serve Kitchens
+
+   **Note:** Menu Engineering requires BOTH Part 1 and Part 2
+
+3. **Extract to Data Folder**
+   
+   Extract the downloaded ZIP file(s) into the `data/` directory. Your structure should be:
+   ```
+   DIH-X-AUC-Hackathon/
+   ├── data/
+   │   ├── Inventory Management/     (CSV files)
+   │   ├── Menu Engineering Part 1/  (CSV files)
+   │   ├── Menu Engineering Part 2/  (CSV files)
+   │   └── Shift Planning/           (CSV files)
+   └── src/
+   ```
+
+4. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Data Notes
+- All timestamps are UNIX integers (use `FROM_UNIXTIME()` in MySQL)
+- All monetary values are in DKK (Danish Krone)
+- See `data/README.md` for detailed documentation
 
 ---
 
@@ -96,6 +123,8 @@ The evaluation heavily weighs **team collaboration** based on GitHub commit hist
 | Reasonable split (e.g., 45%/35%/20%) | Good | Most points |
 | Uneven split (e.g., 80%/15%/5%) | Concerning | Reduced points |
 | Single contributor (100%) | Poor | Significant penalty |
+
+Note: If a team member is a non technical member, please document their contributions in the README file to ensure fair assessment.
 
 **Best Practices for Commits:**
 
@@ -224,5 +253,4 @@ If your solution incorporates artificial intelligence or machine learning compon
 ### Business Value & Innovation
 Your solution will be assessed on its practical applicability, innovation in addressing the problem statement, and potential real-world impact for the specified use case.
 
-### Technical Implementation
-The technical execution of your solution will be reviewed, including code quality, proper use of technologies and frameworks, error handling, and overall functionality.
+
