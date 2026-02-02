@@ -54,20 +54,23 @@ To ensure optimal performance and manageability of the dataset, we have processe
 ## Repository & Documentation Requirements
 
 ### Recommended Folder Structure
+
+```
 your-project/
-├── README.md                # Required
-├── requirements.txt         # Python dependencies
-├── package.json             # Node.js dependencies
-├── src/                      # Source code
-│   ├── main.py               # Entry point
-│   ├── models/               # Data models / ML models
-│   ├── services/             # Business logic
-│   ├── utils/                # Utility functions
-│   └── api/                  # API endpoints
-├── tests/                    # Test files
-├── docs/                     # Additional documentation
-├── config/                   # Configuration files
-└── data/                     # Sample data (no sensitive info)
+├── README.md                    # Required
+├── requirements.txt             # Python dependencies
+├── package.json                 # Node.js dependencies
+├── src/                         # Source code
+│   ├── main.py                  # Entry point
+│   ├── models/                  # Data models/ML models
+│   ├── services/                # Business logic
+│   ├── utils/                   # Utility functions
+│   └── api/                     # API endpoints
+├── tests/                       # Test files
+├── docs/                        # Additional documentation
+├── config/                      # Configuration files
+└── data/                        # Sample data (no sensitive info)
+```
 
 ### Required Components
 
